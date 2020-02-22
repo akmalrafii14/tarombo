@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:tarombo/auth/login.dart';
+import 'package:tarombo/welcome.dart';
 import 'home.dart';
 
 void main() => runApp(
       new MaterialApp(
-        home: SplashScreen(),
+        home: WelcomeScreen(),
         debugShowCheckedModeBanner: false,
         routes: {
           '/HomeScreen': (BuildContext context) => HomePage(),

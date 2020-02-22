@@ -121,7 +121,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: OutlineButton(
-                    color: Colors.red,
+                    borderSide: BorderSide(
+                      color: Color(0xffEB8242),
+                    ),
+                    highlightedBorderColor: Colors.white,
                     onPressed: () {
                       print("ini cotinue");
                     },
