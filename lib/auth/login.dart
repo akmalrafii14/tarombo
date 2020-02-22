@@ -7,7 +7,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  @override
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   bool _obsecureText = true;
   String _password;
 
@@ -65,20 +66,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   padding: EdgeInsets.only(bottom: 32, top: 32),
                   child: TextField(
+                    controller: email,
                     decoration: InputDecoration(
                       hintText: "Email",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                     ),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.only(bottom: 32),
                   child: TextField(
+                    controller: password,
                     obscureText: _obsecureText,
                     decoration: InputDecoration(
                       hintText: "Password",
                       suffixIcon: IconButton(
                         icon: Icon(Icons.remove_red_eye),
                         onPressed: _toggle,
+                        color: Color(0xff424242),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
                       ),
                     ),
                   ),
@@ -134,6 +144,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           MaterialPageRoute(
                               builder: (context) => RegisterScreen()),
                         );
+                        email.clear();
+                        password.clear();
                       },
                       child: Text(
                         "Belum mempunyai akun? Buat sekarang!",

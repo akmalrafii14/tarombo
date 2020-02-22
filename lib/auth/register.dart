@@ -8,6 +8,9 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   bool _obsecureText = true;
   String _password;
   bool isChecked = false;
@@ -60,6 +63,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "Nama Depan",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                     ),
                   ),
                 ),
@@ -68,6 +74,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "Nama Belakang",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                     ),
                   ),
                 ),
@@ -76,6 +85,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "Email",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                     ),
                   ),
                 ),
@@ -85,9 +97,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: _obsecureText,
                     decoration: InputDecoration(
                       hintText: "Password",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                       suffixIcon: IconButton(
                         icon: Icon(Icons.remove_red_eye),
                         onPressed: _toggle,
+                        color: Color(0xff424242),
                       ),
                     ),
                   ),
@@ -98,9 +114,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: _obsecureText,
                     decoration: InputDecoration(
                       hintText: "Konfirmasi Password",
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffEB8242)),
+                      ),
                       suffixIcon: IconButton(
                         icon: Icon(Icons.remove_red_eye),
                         onPressed: _toggle,
+                        color: Color(0xff424242),
                       ),
                     ),
                   ),
@@ -110,17 +130,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: EdgeInsets.only(bottom: 12),
                   child: Row(
                     children: <Widget>[
-                      Transform.scale(
-                        scale: 1.2,
-                        child: Checkbox(
+                      Container(
+                        child: Transform.scale(
+                          scale: 1.2,
+                          child: Checkbox(
+                            // checkColor: Colors.red,
+                            activeColor: Color(0xffEB8242),
                             value: isChecked,
                             onChanged: (bool value) {
-                              setState(() {
-                                isChecked = value;
-                              });
-                            }),
+                              setState(
+                                () {
+                                  isChecked = value;
+                                },
+                              );
+                            },
+                          ),
+                        ),
                       ),
-                      Text("Saya setuju dengan Syarat & Ketentuan"),
+                      Container(
+                        child: Text("Saya setuju dengan Syarat & Ketentuan"),
+                      ),
                     ],
                   ),
                 ),
