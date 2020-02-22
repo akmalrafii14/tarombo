@@ -7,11 +7,12 @@ import 'home.dart';
 
 void main() => runApp(
       new MaterialApp(
-        home: WelcomeScreen(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         routes: {
           '/HomeScreen': (BuildContext context) => HomePage(),
           '/LoginScreen': (BuildContext context) => LoginScreen(),
+          '/WelcomeScreen': (BuildContext context) => WelcomeScreen(),
         },
       ),
     );
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/LoginScreen');
+    Navigator.of(context).pushReplacementNamed('/WelcomeScreen');
   }
 
   void initState() {

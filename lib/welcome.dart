@@ -11,8 +11,8 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              margin:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 12),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 24),
               child: Center(
                 child: Image.asset(
                   'assets/image/diagram.png',

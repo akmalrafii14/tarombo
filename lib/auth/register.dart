@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tarombo/auth/login.dart';
-import 'package:tarombo/auth/login.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -178,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   margin: EdgeInsets.only(top: 12),
                   child: FlatButton(
                     onPressed: () {
-                      Navigator.pop(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => LoginScreen(),
